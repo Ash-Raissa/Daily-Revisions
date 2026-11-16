@@ -401,8 +401,8 @@ const ageMap = ages.map(function (age) {
 //sort
 //sorting companies by the start year
 
-const sortedCompanies = companies.sort(function(c1,c2){
-    if(c1.start > c2.start){
+const sortedCompanies = companies.sort(function (c1, c2) {
+    if (c1.start > c2.start) {
         return 1;
     } else {
         return -1;
@@ -417,53 +417,132 @@ const sortedCompanies = companies.sort(function(c1,c2){
 
 //Get total for all ages
 
-const ageSum = ages.reduce(function(total, age){
+const ageSum = ages.reduce(function (total, age) {
     return total + age;
-},0)
+}, 0)
 
 //console.log(ageSum)
 
-const ageSum2 = ages.reduce((total, age1) => total + age1,0);
+const ageSum2 = ages.reduce((total, age1) => total + age1, 0);
 //console.log(ageSum2)
 
 
 
+let pupils = [
+    { name: "Alice", marks: 75 },
+    { name: "Brian", marks: 42 },
+    { name: "Sarah", marks: 90 },
+    { name: "Peter", marks: 35 },
+    { name: "Davide", marks: 60 },
+]
+
+//students who scored 50 and above, reurn only their names, use filter() to select use map() to extract their names
+
+// function getPassedStudent() {
+//     return pupils
+
+//         .filter(student => student.marks >= 50)
+//         .map(student => student.name)
+// }
+
+// console.log(getPassedStudent());
+
+
+let products = [
+    { name: "Laptop", price: 1500 },
+    { name: "Phone", price: 800 },
+    { name: "Tablet", price: 400 },
+    { name: "Keyboard", price: 100 },
+    { name: "Monitor", price: 600 }
+]
+
+function getExpensiveProducts() {
+    return products.filter(function (produce) {
+        return produce.price > 500
+    })
+        .map(function (produceName) {
+            return produceName.name
+        })
+}
+//console.log(getExpensiveProducts());
+
+// console.log(
+//     products
+//     .filter(product => product.price > 500)
+//     .map(product => product.name)
+// )
 
 
 
+let earners = [
+    { name: "John", age: 25, salary: 3000 },
+    { name: "Mary", age: 30, salary: 5000 },
+    { name: "David", age: 22, salary: 2500 },
+    { name: "Sarah", age: 28, salary: 4500 },
+    { name: "Peter", age: 35, salary: 6000 }
+]
+
+// function getHighEarners(){
+//     return earners.filter(function(worker){
+//         return worker.salary > 3000
+//     })
+//     // .map(function(worker){
+//     //     return worker.name
+//     // })
+//     .map(function(worker){
+//         return worker.age
+//     })
+// }
+// console.log(getHighEarners());
 
 
 
+let orders = [
+    { product: "Shoes", quantity: 2, price: 50 },
+    { product: "Bag", quantity: 1, price: 30 },
+    { product: "Watch", quantity: 3, price: 100 },
+    { product: "Shirt", quantity: 2, price: 25 },
+    { product: "Phone", quantity: 1, price: 500 },
+]
+
+function getExpensiveOrders() {
+    return orders
+        .filter(order => order.quantity * order.price > 100)
+        .map(order => ({
+            product: order.product,
+            total: order.quantity * order.price
+
+        }))
+
+}
+
+//console.log(getExpensiveOrders());
+
+//Reduce - combines elements into one single value
+
+let numerals = [10, 20, 30];
+
+let total = numerals.reduce((sum, number)=>{
+    return sum + number;
+},0);
+console.log(total)
 
 
+let sales = [
+    { product: "Laptop", quantity: 2, price: 1000 },
+    { product: "Phone", quantity: 3, price: 500 },
+    { product: "Tablet", quantity: 1, price: 300 },
+    { product: "Monitor", quantity: 2, price: 400 },
+    { product: "Keyboard", quantity: 5, price: 50 }
+]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function calculateRevenue(){
+    return sales
+    .filter(product => product.price > 300)
+    .map(product => product.price * product.quantity)
+    .reduce((sum, number)=> sum + number, 0)
+}
+console.log(calculateRevenue())
 
 
 
