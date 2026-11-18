@@ -1,19 +1,19 @@
 //If statement executes code only when a condition is true
 
-let age = 20;
+// let age = 20;
 
-if (age >= 18) {
-    //console.log("You are an adult.")
-}
+// if (age >= 18) {
+//     //console.log("You are an adult.")
+// }
 
-//if ... else statement used when you want something to happen if the condition is false.
+// //if ... else statement used when you want something to happen if the condition is false.
 
-let years = 16;
-if (age >= 18) {
-    //console.log("You are an adult")
-} else {
-    //console.log("You are underage")
-}
+// let years = 16;
+// if (age >= 18) {
+//     //console.log("You are an adult")
+// } else {
+//     //console.log("You are underage")
+// }
 
 //if ... else...if...else statement used when you have several conditions to check
 
@@ -32,26 +32,26 @@ if (marks >= 80) {
 //Comparison operators
 //== : Equal value, === : Equal value and type, != : not equal, !== Not equal and type, > greater than, < less than, >= greater than or equal, <= less than or equal
 
-let age2 = 25;
-let hasID = true;
+// let age2 = 25;
+// let hasID = true;
 
-if (age >= 18 && hasID === true) {
-    //console.log("Access granted");
-} else {
-    //console.log("Access Denied")
-}
+// if (age >= 18 && hasID === true) {
+//     //console.log("Access granted");
+// } else {
+//     //console.log("Access Denied")
+// }
 
-let result = 72;
+// let result = 72;
 
-if (result >= 80) {
-    //console.log("Excellent")
-} else if (result > 70) {
-    //console.log("Very good")
-} else if (result > 50) {
-    //console.log("Good")
-} else {
-    //console.log("Fail")
-}
+// if (result >= 80) {
+//     //console.log("Excellent")
+// } else if (result > 70) {
+//     //console.log("Very good")
+// } else if (result > 50) {
+//     //console.log("Good")
+// } else {
+//     //console.log("Fail")
+// }
 
 let customer = {
     name: "Sam",
@@ -280,7 +280,7 @@ function calculateDelivery(purchase) {
     switch (purchase.shippingMethod) {
         case "standard":
             return "Delivery in 5-7 days";
-        case "express" :
+        case "express":
             return "Delivery in 1-2 days";
         case "pickup":
             return "collect your order";
@@ -290,6 +290,88 @@ function calculateDelivery(purchase) {
 }
 
 //console.log(calculateDelivery(purchase));
+
+
+let age = 18;
+let hasTicket = false;
+let isOnGuestList = true;
+
+function checkEntry() {
+    if (age < 18) {
+        return "Entry denied: age restriction";
+    } else if (age >= 18 && hasTicket === true || isOnGuestList === true) {
+        return "Entry approved";
+    } else {
+        return "Entry denied: ticket required";
+    }
+}
+
+//console.log(checkEntry())
+
+//If/Else statements
+
+function checkNumber(num) {
+    if (num > 0) {
+        return "Positive";
+    } else if (num < 0) {
+        return "Negative";
+    } else {
+        return "zero";
+    };
+};
+
+//console.log(checkNumber(-8))
+
+//Ternary
+function checkAge(age) {
+    return age >= 18 ? "Adult" : "Minor"
+}
+
+//console.log(checkAge(18));
+
+//switch
+function getDay(day) {
+    switch (day) {
+        case 1:
+            return "Monday";
+        case 2:
+            return "Tuesday";
+        case 3:
+            return "Wednesday";
+        case 4:
+            return "Thursday";
+        case 5:
+            return "Friday";
+        default:
+            return "Invalid day";
+    }
+}
+
+//console.log(getDay(1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
