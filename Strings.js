@@ -503,6 +503,166 @@ function checkWord(sentence, word) {
 // console.log(checkWord("Welcome to Uganda", "kenya"));
 
 
+let message1 = "I am learning JavaScript and building projects";
+
+function searchMessage(message, word) {
+
+    return message.includes(word);
+};
+
+// console.log(searchMessage(message1, "JavaScript"));
+// console.log(searchMessage(message1, "Python"));
+// console.log(searchMessage(message1, "projects"));
+
+
+
+//startsWith() and endsWith()
+//These are two string methods used to check the beginning and ending of a string.
+
+//startsWith()
+
+//Checks whether a string begins with a particular character or word.
+
+
+let name2 = "JavaScript";
+
+// console.log(name2.startsWith("Java")); // true
+// console.log(name2.startsWith("Script")); // false
+
+
+//endsWith()
+
+//Checks whether a string ends with a particular character or word.
+
+
+// console.log(name2.endsWith("Script")); // true
+// console.log(name2.endsWith("Java")); // false
+
+//Both return Boolean values
+
+let username = "Dev_Raissa2026";
+
+function validateUsername(username) {
+    let result = username.startsWith("Dev") && username.endsWith("2026")
+    return result
+}
+
+
+// console.log(validateUsername("Dev_Raissa2026")); // true
+// console.log(validateUsername("Raissa_Dev2026")); // false
+// console.log(validateUsername("Dev_Raissa2025")); // false
+// console.log(validateUsername("Dev_John2026"));   // true
+
+
+
+
+
+let email2 = "raissa@gmail.com";
+
+
+function checkEmail(email) {
+    let outcome = email.startsWith("raissa") && email.endsWith(".com")
+    return outcome;
+}
+
+// console.log(checkEmail("raissa@gmail.com"));  // true
+// console.log(checkEmail("john@gmail.com"));    // false
+// console.log(checkEmail("raissa@yahoo.org"));  // false
+// console.log(checkEmail("raissa@hotmail.com")); // true
+
+
+// slice()
+// slice() extracts a portion of a string and returns it as a new string
+//syntax: string.slice(start, end);
+
+// - start: The index where extraction begins (included).
+// - end: The index where extraction stops (excluded).
+
+let language = "JavaScript";
+
+//console.log(language.slice(0,4));
+// console.log(language.slice(4,10));
+// console.log(language.slice(4));
+
+//You can count from the end of a string using negative indexes.
+
+// console.log(language.slice(-6)); // Script
+// console.log(language.slice(-10, -6)); // Java
+
+let fullName = "JavaScriptDeveloper";
+
+// function extractName(fullName){
+//     // console.log(fullName.slice(0,10));
+//     // console.log(fullName.slice(10,19));
+
+// }
+
+// extractName(fullName);
+
+
+let email4 = "raissa.bavurhe@gmail.com";
+
+// function extractEmailParts(email) {
+//     console.log(email.slice(0, 14));
+//     console.log(email.slice(-9))
+// }
+
+//extractEmailParts(email4);
+
+
+let productCode = "UG-2026-ELECTRONICS-4589";
+
+function extractCode(productCode) {
+    let char1 = productCode.slice(0, 2);
+    let char2 = productCode.slice(3, 7);
+    let char3 = productCode.slice(-4)
+    return [char1, char2, char3];
+}
+// console.log(extractCode(productCode))
+
+//OR
+
+// function extractCode(productCode) {
+//     // console.log(productCode.slice(0, 2));
+//     // console.log(productCode.slice(3, 7));
+//     // console.log(productCode.slice(-4));
+
+// }
+// extractCode(productCode);
+
+
+//substring() extracts characters from a string, just like slice().
+
+//syntax: string.substring(start, end);
+
+//substring() treats negative indexes as 0
+
+//If the first number is greater than the second (4,0), substring() swaps the two positions.
+
+
+let studentName = "RaissaBavurhe";
+
+function extractName(fullName){
+    console.log(fullName.substring(0,6));
+    console.log(fullName.substring(6,13));
+
+}
+extractName(studentName);
+
+let word5 = "JavaScript";
+
+function extractWord(word){
+    return word.substring(10, 4)
+}
+//console.log(extractWord(word5));
+
+
+
+
+
+
+
+
 
 
 
