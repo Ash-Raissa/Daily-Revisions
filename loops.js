@@ -189,15 +189,15 @@ function countDivisibleByThree() {
 //console.log(countDivisibleByThree())
 
 
-function countDivisibleByFive(){
+function countDivisibleByFive() {
     let number = 1;
     let count = 0;
 
-    while(number <= 25){
-        if(number % 5 === 0){
-            count ++;
+    while (number <= 25) {
+        if (number % 5 === 0) {
+            count++;
         }
-        number ++;
+        number++;
     }
     return count;
 }
@@ -205,23 +205,20 @@ function countDivisibleByFive(){
 //console.log(countDivisibleByFive());
 
 
-function countEvenNumbers(){
+function countEvenNumbers() {
     let number = 1;
     let count = 0;
 
-    while(number <= 30){
-        if(number % 2 === 0 && number > 10){
-            count ++;
+    while (number <= 30) {
+        if (number % 2 === 0 && number > 10) {
+            count++;
         }
-        number ++;
+        number++;
     }
     return count;
 }
 
 //console.log(countEvenNumbers())
-
-
-
 
 
 
