@@ -443,14 +443,14 @@ programmer.work();
 
 
 
-class Payment{
-    processPayment(){
+class Payment {
+    processPayment() {
         //console.log("Processing general payment");
     }
 }
 
-class CreditCardPayment extends Payment{
-    processPayment(){
+class CreditCardPayment extends Payment {
+    processPayment() {
         super.processPayment()
         //console.log("Payment made using a credit card.")
     }
@@ -461,25 +461,25 @@ let payment1 = new CreditCardPayment();
 payment1.processPayment();
 
 
-class Inventory{
-    constructor(productName, quantity){
+class Inventory {
+    constructor(productName, quantity) {
         this.productName = productName;
         this.quantity = quantity;
     }
-    displayInfo(){
+    displayInfo() {
         // console.log(`Product: ${this.productName}`);
         // console.log(`Quantity: ${this.quantity}`);
 
     }
 }
 
-class WarehouseInventory extends Inventory{
-    constructor(productName, quantity, warehouseLocation){
+class WarehouseInventory extends Inventory {
+    constructor(productName, quantity, warehouseLocation) {
         super(productName, quantity);
         this.warehouseLocation = warehouseLocation;
 
     }
-    displayInfo(){
+    displayInfo() {
         super.displayInfo()
         //console.log(`Warehouse: ${this.warehouseLocation}`)
     }
@@ -491,24 +491,24 @@ let produce = new WarehouseInventory("Rice", 50, "Kampala")
 produce.displayInfo()
 
 
-class ElectricityBill{
-    constructor(unit, cost){
+class ElectricityBill {
+    constructor(unit, cost) {
         this.unit = unit;
         this.cost = cost;
     }
 
-    calculateBill(){
+    calculateBill() {
         // console.log(`Units consumed: ${this.unit}`);
         // console.log(`Cost per unit: ${this.cost}`);
     }
 }
 
-class ResidentialBill extends ElectricityBill{
-    constructor(unit, cost){
+class ResidentialBill extends ElectricityBill {
+    constructor(unit, cost) {
         super(unit, cost)
     }
 
-    calculateBill(){
+    calculateBill() {
         super.calculateBill();
         let total = this.unit * this.cost;
         //console.log(`Total Bill: ${total}`);
@@ -520,25 +520,25 @@ let receipt = new ResidentialBill(120, 500);
 receipt.calculateBill();
 
 
-class Order{
-    constructor(id, product){
+class Order {
+    constructor(id, product) {
         this.id = id;
         this.product = product
     }
-    showOrder(){
+    showOrder() {
         // console.log(`Order ID: ${this.id}`);
         // console.log(`Product: ${this.product}`);
     }
 
 }
 
-class ExpressOrder extends Order{
-    constructor(id, product, delivery, fee){
+class ExpressOrder extends Order {
+    constructor(id, product, delivery, fee) {
         super(id, product);
         this.delivery = delivery;
         this.fee = fee;
     }
-    showOrder(){
+    showOrder() {
         super.showOrder();
         // console.log(`Delivery: ${this.delivery}`);
         // console.log(`Delivery Fee: ${this.fee}`);
@@ -551,35 +551,35 @@ let order1 = new ExpressOrder(105, "Laptop", "Express", 15000)
 order1.showOrder();
 
 
-class Subscription{
-    constructor(customer, plan){
+class Subscription {
+    constructor(customer, plan) {
         this.customer = customer;
         this.plan = plan
     }
 
-    showDetails(){
-        console.log(`Customer: ${this.customer}`);
-        console.log(`Plan: ${this.plan}`);
+    showDetails() {
+        // console.log(`Customer: ${this.customer}`);
+        // console.log(`Plan: ${this.plan}`);
     }
 
 }
 
-class PremiumSubscription extends Subscription{
-     constructor(customer, plan, status, isActive){
+class PremiumSubscription extends Subscription {
+    constructor(customer, plan, status, isActive) {
         super(customer, plan);
         this.status = status;
         this.isActive = isActive;
 
     }
-    showDetails(){
+    showDetails() {
         super.showDetails()
 
-        if(this.isActive === true){
-            console.log(`Status: Active`);
-            console.log(`Access: All premium features.`)
-        }else{
-            console.log(`Status: Inactive`);
-            console.log(`Access: Limited features.`)
+        if (this.isActive === true) {
+            //console.log(`Status: Active`);
+            //console.log(`Access: All premium features.`)
+        } else {
+            //console.log(`Status: Inactive`);
+            //console.log(`Access: Limited features.`)
         }
     }
 }
@@ -587,6 +587,45 @@ class PremiumSubscription extends Subscription{
 let customer = new PremiumSubscription("Sarah", "basic", true);
 
 customer.showDetails();
+
+
+//Encapsulation - keeping an object's data protected inside a clss and controlling how that data can be accessed or changed.
+
+//JS uses the # symbol to make a property private.
+
+class Wallet {
+    #balance;
+
+    constructor(balance) {
+        this.#balance = balance;
+    }
+
+    addMoney(amount) {
+        if (amount > 0) {
+            this.#balance += amount;
+        }
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+}
+
+let myWallet = new Wallet(100);
+
+myWallet.addMoney(50);
+console.log(myWallet.getBalance()); // 150
+
+myWallet.addMoney(-20);
+console.log(myWallet.getBalance()); // 150
+
+
+
+
+
+
+
+
 
 
 
